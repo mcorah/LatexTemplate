@@ -1,5 +1,9 @@
 %\documentclass[12pt]{article}
 \documentclass{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% Package includes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{moreverb}
 \usepackage{amssymb}
 \usepackage{float}
@@ -9,13 +13,17 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools,bbm}
-
 \usepackage[vcentering,dvips]{geometry}
-\geometry{papersize={8.5in,11in},total={7.2in,10.2in}}
-\title{A Title}
-\author{Micah Corah}
 
-\newcommand{\image}[3]{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% Package setup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\geometry{papersize={8.5in,11in},total={7.2in,10.2in}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%  Command defs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Image}[3]{
 \begin{figure}[t]
   \centerline{\includegraphics[width=0.6\textwidth]{#1}}
 \caption{#2}
@@ -29,10 +37,29 @@
   \end{bmatrix}
 }
 
+\newcommand{\Table}[4]{
+  \begin{table}
+    \label{#2}
+    \caption{#1}
+    \begin{center}
+      \begin{tabular}{#3}
+        #4
+      \end{tabular}
+    \end{center}
+  \end{table}
+}
+
 \newcommand{\real}{ {\mathbb{R}} }
 \newcommand{\onevec}{ {\mathbbm{1}} }
 \newcommand{\biga}{ {\mathbb{A}} }
 
+
+\title{A Title}
+\author{Micah Corah}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%% Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \maketitle
 
