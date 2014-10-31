@@ -1,0 +1,39 @@
+%\documentclass[12pt]{article}
+\documentclass{article}
+\usepackage{moreverb}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage[shortlabels]{enumitem}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools,bbm}
+
+\usepackage[vcentering,dvips]{geometry}
+\geometry{papersize={8.5in,11in},total={7.2in,10.2in}}
+\title{A Title}
+\author{Micah Corah}
+
+\newcommand{\image}[3]{
+\begin{figure}[t]
+  \centerline{\includegraphics[width=0.6\textwidth]{#1}}
+\caption{#2}
+\label{#3}
+\end{figure}
+}
+
+\newcommand{\Matrix}[1]{
+  \begin{bmatrix}
+    #1
+  \end{bmatrix}
+}
+
+\newcommand{\real}{ {\mathbb{R}} }
+\newcommand{\onevec}{ {\mathbbm{1}} }
+\newcommand{\biga}{ {\mathbb{A}} }
+
+\begin{document}
+\maketitle
+
+\end{document}
