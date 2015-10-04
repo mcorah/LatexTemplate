@@ -4,16 +4,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%% Package includes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{moreverb}
-\usepackage{amssymb}
-\usepackage{float}
 \usepackage[shortlabels]{enumitem}
-\usepackage{setspace}
-\usepackage{graphicx}
+\usepackage[vcentering,dvips]{geometry}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{amsmath}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{float}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{hyperref}
 \usepackage{mathtools,bbm}
-\usepackage[vcentering,dvips]{geometry}
+\usepackage{moreverb}
+\usepackage{sagetex}
+\usepackage{setspace}
+\usepackage{url}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%% Package setup
@@ -52,7 +57,12 @@
 \newcommand{\real}{ {\mathbb{R}} }
 \newcommand{\onevec}{ {\mathbbm{1}} }
 \newcommand{\biga}{ {\mathbb{A}} }
+\newcommand{\psd}{ {\mathbb{S}} }
 
+\newcommand{\fix}{\marginpar{\textcolor{blue}{FIX}}}
+\newcommand{\new}{\marginpar{\textcolor{blue}{NEW}}}
+
+\newcommand{\todo}[1]{\textcolor{blue}{\emph{\bf TODO: #1}}}
 
 \title{A Title}
 \author{Micah Corah}
@@ -62,5 +72,35 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \maketitle
+
+\section{Sage tutorial}
+Inline sage looks like $5^2=\sage{5^2}$
+
+How about a derivative?
+\begin{align}
+  \frac{d}{dx}\tan^{-1}x = \sage{derivative(atan(x),x)}
+\end{align}
+
+Or a block of sage:
+\begin{sageblock}
+  f(x) = integrate(sin(x)*cos(x), x)
+\end{sageblock}
+\begin{align}
+  \sage{f(x)}
+\end{align}
+
+Now how about we plot something (or really the previous function)?
+See Figure \ref{fig:sage}.\\
+
+\begin{figure}
+  \centerline{ \sageplot[scale=0.5]{plot(f, -2*pi, 2*pi)} }
+  \caption{A plot of $f=\protect\sage{f(x)}$}
+  \label{fig:sage}
+\end{figure}
+
+I can also do things silently
+\begin{sagesilent}
+  g(x) = 0
+\end{sagesilent}
 
 \end{document}
